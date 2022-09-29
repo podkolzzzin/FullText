@@ -46,7 +46,10 @@ class PrefixTree
             yield return builder.ToString();
 
         if (node.Children == null)
+        {
+            builder.Remove(builder.Length - 1, 1);
             yield break;
+        }
 
         foreach(var childNode in node.Children.Values)
         {
